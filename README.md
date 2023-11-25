@@ -28,5 +28,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) f
 
 ## Acknowledgments
 - [Display Images From Google Drive On A Webpage.](https://medium.com/@bede.chk/display-images-from-google-drive-on-a-webpage-html-or-markdown-b64004e72d8e#:~:text=Share%20the%20Image%3A%20Right%2Dclick,Copy%20the%20sharing%20link%20provided.)
+- Icon <a href="https://www.flaticon.com/free-icons/google-drive" title="google drive icons">Google drive icons created by Freepik - Flaticon</a>
 
 ## End of README.md
