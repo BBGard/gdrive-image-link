@@ -21,7 +21,7 @@ GDrive Image Link is a simple webapp that allows you to get the link of an image
 
 
 ## Authors
-- **[Benjamin Gardiner](https://github.com/BBGard)
+- [Benjamin Gardiner](https://github.com/BBGard)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
