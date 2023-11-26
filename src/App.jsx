@@ -10,6 +10,7 @@ import {
   OutlinedInput,
   CardMedia,
 } from "@mui/material";
+import cardImage from "./assets/undraw_image.svg";
 
 import './App.css'
 
@@ -58,7 +59,6 @@ function App() {
 
 
   return (
-
     <Box
       sx={{
         display: "flex",
@@ -67,33 +67,50 @@ function App() {
         justifyContent: "flex-start",
         minHeight: "100svh",
         maxHeight: "fit-content",
+        padding: "0 1rem",
       }}
     >
-      <Typography variant="h3" gutterBottom sx={{marginTop: "10%"}}>
+      <Typography variant="h3" gutterBottom sx={{ marginTop: "10%" }}>
         Google Drive Image Link Converter
       </Typography>
 
-      <Card sx={{
-          width: 500,
+      <Card
+        sx={{
+          maxWidth: 500,
+          width: "100%",
           margin: "1rem auto",
           height: "fit-content",
-        }}>
-        <CardContent  sx={{
+        }}
+      >
+        <CardMedia component="img" width="300" image={cardImage} />
+        <CardContent
+          sx={{
             textAlign: "center",
             marginBottom: "1rem",
             padding: "1rem",
-          }}>
+          }}
+        >
+          <Typography variant="primary" fontSize={"1.1rem"} fontWeight={"500"}>
+            This app converts Google Drive Image Links to Direct Image Links
+            which can be used dynamically in websites.
+            <br />
+            <br />
+          </Typography>
           <Typography variant="primary" fontSize={"1.1rem"}>
-            This app converts Google Drive Image Links to Direct Image Links which can be used dynamically in websites.
-            <br />
-            <br />
-            To get the Google Drive Image Link, open an image in Google Drive, click &quot;Share&quot;, then click &quot;Get Link&quot;.
+            To get the Google Drive Image Link, open an image in Google Drive,
+            click &quot;Share&quot;, then click &quot;Get Link&quot;.
           </Typography>
         </CardContent>
       </Card>
 
-
-      <Card sx={{ width: 500, marginBottom: "1rem", height: "fit-content"}}>
+      <Card
+        sx={{
+          maxWidth: 500,
+          width: "100%",
+          marginBottom: "1rem",
+          height: "fit-content",
+        }}
+      >
         <form onSubmit={handleSubmit}>
           <CardActions>
             <OutlinedInput
@@ -103,10 +120,21 @@ function App() {
             />
           </CardActions>
           <CardActions>
-            <Button fullWidth variant="contained" type="submit">
+            <Button
+              sx={{
+                backgroundColor: "#6c63ff",
+                "&:hover": {
+                  backgroundColor: "#4c47b3",
+                },
+              }}
+              fullWidth
+              variant="contained"
+              type="submit"
+            >
               Convert
             </Button>
             <Button
+              color="error"
               fullWidth
               variant="contained"
               onClick={() => {
@@ -121,7 +149,14 @@ function App() {
           </CardActions>
         </form>
       </Card>
-      <Card sx={{ width: 500, marginBottom: "1rem", height: "fit-content" }}>
+      <Card
+        sx={{
+          maxWidth: 500,
+          width: "100%",
+          marginBottom: "1rem",
+          height: "fit-content",
+        }}
+      >
         <CardActions>
           <TextField
             fullWidth
@@ -132,6 +167,12 @@ function App() {
         </CardActions>
         <CardActions>
           <Button
+            sx={{
+              backgroundColor: "#6c63ff",
+              "&:hover": {
+                backgroundColor: "#4c47b3",
+              },
+            }}
             fullWidth
             variant="contained"
             onClick={() => {
@@ -145,10 +186,16 @@ function App() {
       </Card>
 
       {modifiedLink && !showError ? (
-        <Card sx={{ width: 500, height: "fit-content" }}>
+        <Card sx={{ maxWidth: 500, width: "100%", height: "fit-content" }}>
           <CardMedia component="img" width="300" image={modifiedLink} />
           <CardActions>
             <Button
+              sx={{
+                backgroundColor: "#6c63ff",
+                "&:hover": {
+                  backgroundColor: "#4c47b3",
+                },
+              }}
               fullWidth
               variant="contained"
               href={modifiedLink}
@@ -158,9 +205,9 @@ function App() {
             </Button>
           </CardActions>
         </Card>
-      ) :  showError ? (
-        <Card sx={{ width: 500, height: "fit-content"}}>
-          <CardContent sx={{justifyContent: "center"}}>
+      ) : showError ? (
+        <Card sx={{ maxWidth: 500, width: "100%", height: "fit-content" }}>
+          <CardContent sx={{ justifyContent: "center" }}>
             <Typography variant="h6" color="error" sx={{ textAlign: "center" }}>
               {errorMessage}
             </Typography>
@@ -168,9 +215,7 @@ function App() {
         </Card>
       ) : null}
     </Box>
-
-
-  )
+  );
 }
 
 
