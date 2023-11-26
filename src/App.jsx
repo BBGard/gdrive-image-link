@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import {
   Typography,
   Box,
@@ -18,11 +18,6 @@ function App() {
   const [modifiedLink, setModifiedLink] = useState(""); // State to store modified link
   const [showError, setShowError] = useState(false);    // State to show error message
   const [errorMessage, setErrorMessage] = useState(""); // State to store error message
-
-
-  useEffect(() => {
-    console.log("modifiedLink: ", modifiedLink);
-  } , [modifiedLink]);
 
   // Handle form submit
   function handleSubmit(event) {
