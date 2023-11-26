@@ -5,6 +5,7 @@ import {
   Button,
   Card,
   CardActions,
+  CardContent,
   TextField,
   OutlinedInput,
   CardMedia,
@@ -68,14 +69,36 @@ function App() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        height: "100svh",
+        justifyContent: "flex-start",
+        minHeight: "100svh",
+        maxHeight: "fit-content",
       }}
     >
-      <Typography variant="h3" gutterBottom>
+      <Typography variant="h3" gutterBottom sx={{marginTop: "10%"}}>
         Google Drive Image Link Converter
       </Typography>
-      <Card sx={{ width: 500, marginBottom: "1rem"}}>
+
+      <Card sx={{
+          width: 500,
+          margin: "1rem auto",
+          height: "fit-content",
+        }}>
+        <CardContent  sx={{
+            textAlign: "center",
+            marginBottom: "1rem",
+            padding: "1rem",
+          }}>
+          <Typography variant="primary" fontSize={"1.1rem"}>
+            This app converts Google Drive Image Links to Direct Image Links which can be used dynamically in websites.
+            <br />
+            <br />
+            To get the Google Drive Image Link, open an image in Google Drive, click &quot;Share&quot;, then click &quot;Get Link&quot;.
+          </Typography>
+        </CardContent>
+      </Card>
+
+
+      <Card sx={{ width: 500, marginBottom: "1rem", height: "fit-content"}}>
         <form onSubmit={handleSubmit}>
           <CardActions>
             <OutlinedInput
@@ -103,7 +126,7 @@ function App() {
           </CardActions>
         </form>
       </Card>
-      <Card sx={{ width: 500, marginBottom: "1rem" }}>
+      <Card sx={{ width: 500, marginBottom: "1rem", height: "fit-content" }}>
         <CardActions>
           <TextField
             fullWidth
@@ -127,7 +150,7 @@ function App() {
       </Card>
 
       {modifiedLink && !showError ? (
-        <Card sx={{ width: 500 }}>
+        <Card sx={{ width: 500, height: "fit-content" }}>
           <CardMedia component="img" width="300" image={modifiedLink} />
           <CardActions>
             <Button
@@ -141,15 +164,14 @@ function App() {
           </CardActions>
         </Card>
       ) :  showError ? (
-        <Card sx={{ width: 500}}>
-          <CardActions sx={{justifyContent: "center"}}>
+        <Card sx={{ width: 500, height: "fit-content"}}>
+          <CardContent sx={{justifyContent: "center"}}>
             <Typography variant="h6" color="error" sx={{ textAlign: "center" }}>
               {errorMessage}
             </Typography>
-          </CardActions>
+          </CardContent>
         </Card>
       ) : null}
-
     </Box>
 
 
