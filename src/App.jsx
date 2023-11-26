@@ -149,6 +149,10 @@ function App() {
           </CardActions>
         </form>
       </Card>
+
+      {modifiedLink && !showError ? (
+        <>
+
       <Card
         sx={{
           maxWidth: 500,
@@ -185,7 +189,6 @@ function App() {
         </CardActions>
       </Card>
 
-      {modifiedLink && !showError ? (
         <Card sx={{ maxWidth: 500, width: "100%", height: "fit-content" }}>
           <CardMedia component="img" width="300" image={modifiedLink} />
           <CardActions>
@@ -205,6 +208,7 @@ function App() {
             </Button>
           </CardActions>
         </Card>
+        </>
       ) : showError ? (
         <Card sx={{ maxWidth: 500, width: "100%", height: "fit-content" }}>
           <CardContent sx={{ justifyContent: "center" }}>
