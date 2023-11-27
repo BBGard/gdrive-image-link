@@ -9,6 +9,7 @@ import {
   TextField,
   OutlinedInput,
   CardMedia,
+  ButtonGroup,
 } from "@mui/material";
 import cardImage from "./assets/undraw_image.svg";
 
@@ -59,6 +60,7 @@ function App() {
 
 
   return (
+
     <Box
       sx={{
         display: "flex",
@@ -73,7 +75,6 @@ function App() {
       <Typography variant="h3" gutterBottom sx={{ marginTop: "10%" }}>
         Google Drive Image Link Converter
       </Typography>
-
       <Card
         sx={{
           maxWidth: 500,
@@ -170,12 +171,14 @@ function App() {
           />
         </CardActions>
         <CardActions>
+        <ButtonGroup fullWidth orientation='vertical'>
           <Button
             sx={{
               backgroundColor: "#6c63ff",
               "&:hover": {
                 backgroundColor: "#4c47b3",
               },
+              marginBottom: "1rem",
             }}
             fullWidth
             variant="contained"
@@ -186,18 +189,40 @@ function App() {
           >
             Copy Link
           </Button>
+          <Button
+            sx={{
+              backgroundColor: "#6c63ff",
+              "&:hover": {
+                backgroundColor: "#4c47b3",
+              },
+            }}
+            fullWidth
+            variant="contained"
+            // Copy as html image tag
+            onClick={() => {
+              navigator.clipboard.writeText(
+                `<img src="${modifiedLink}" alt="Image" />`
+              );
+            }}
+            disabled={modifiedLink === ""}
+          >
+            Copy as HTML
+          </Button>
+          </ButtonGroup>
         </CardActions>
       </Card>
 
         <Card sx={{ maxWidth: 500, width: "100%", height: "fit-content" }}>
           <CardMedia component="img" width="300" image={modifiedLink} />
           <CardActions>
+            <ButtonGroup fullWidth orientation='vertical'>
             <Button
               sx={{
                 backgroundColor: "#6c63ff",
                 "&:hover": {
                   backgroundColor: "#4c47b3",
                 },
+                marginBottom: "1rem",
               }}
               fullWidth
               variant="contained"
@@ -206,6 +231,28 @@ function App() {
             >
               Open Image
             </Button>
+            <Button
+             sx={{
+              backgroundColor: "#6c63ff",
+              "&:hover": {
+                backgroundColor: "#4c47b3",
+              },
+            }}
+            fullWidth
+            variant="contained"
+            // On click download image
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = modifiedLink;
+              link.download = "image.jpg";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            >
+              Download Image
+            </Button>
+            </ButtonGroup>
           </CardActions>
         </Card>
         </>
