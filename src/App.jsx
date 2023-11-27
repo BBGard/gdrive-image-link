@@ -222,7 +222,6 @@ function App() {
                 "&:hover": {
                   backgroundColor: "#4c47b3",
                 },
-                marginBottom: "1rem",
               }}
               fullWidth
               variant="contained"
@@ -230,27 +229,6 @@ function App() {
               target="_blank"
             >
               Open Image
-            </Button>
-            <Button
-             sx={{
-              backgroundColor: "#6c63ff",
-              "&:hover": {
-                backgroundColor: "#4c47b3",
-              },
-            }}
-            fullWidth
-            variant="contained"
-            // On click download image
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = modifiedLink;
-              link.download = "image.jpg";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-            >
-              Download Image
             </Button>
             </ButtonGroup>
           </CardActions>
