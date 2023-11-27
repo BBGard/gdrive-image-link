@@ -9,12 +9,12 @@ GDrive Image Link is a simple webapp that allows you to get the link of an image
 ## Getting Started
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
-3. Run `npm rund dev` to start the development server.
+3. Run `npm run dev` to start the development server.
 4. Open [http://localhost:5173](http://localhost:5173) to view it in the browser. - Note: port may vary.
 
 ## Deployment
 1. Run `npm run build` to build the app for production.
-2. Deploy the `build` folder to your web server.
+2. Deploy the `dist` folder to your web server.
 
 ## Built With
 - [React](https://reactjs.org/)
