@@ -100,6 +100,9 @@ function App() {
           <Typography variant="primary" fontSize={"1.1rem"}>
             To get the Google Drive Image Link, open an image in Google Drive,
             click &quot;Share&quot;, then click &quot;Get Link&quot;.
+            <br />
+            <br />
+            NOTE: Make sure the image is shared publicly. If not, only you will be able to see the image.
           </Typography>
         </CardContent>
       </Card>

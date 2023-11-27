@@ -5,6 +5,7 @@ Based on the following article: [Display Images From Google Drive On A Webpage.]
 
 ## Description
 GDrive Image Link is a simple webapp that allows you to get the link of an image stored in your Google Drive. This link can be used in websites, markdown files, etc.
+NOTE: Make sure the image is shared publicly. If not, only you will be able to see the image.
 
 ## Getting Started
 1. Clone the repository.
